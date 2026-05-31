@@ -6,6 +6,7 @@ export const Colors = {
   },
   bg: {
     blueDark: "rgb(6, 62, 140)",
-    blueLight: "rgba(19, 76, 181, 1)"
+    blueLight: "rgba(19, 76, 181, 1)",
+    blueCard: "rgb(26, 67, 143)"
   }
 };

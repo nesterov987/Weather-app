@@ -1,40 +1,33 @@
-import store from "@/store/store";
-import i18n, { initLanguage } from "@/utils/initLanguage";
-import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
-import * as SplashScreen from "expo-splash-screen";
-import React, { useEffect } from "react";
-import { I18nextProvider } from "react-i18next";
-import "react-native-reanimated";
 import { Provider } from "react-redux";
+import { store } from "../store/store";
+import { I18nextProvider } from "react-i18next";
+import i18n from "../translation/i18n";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect } from "react";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded] = useFonts({
-    Rubik: require("../assets/fonts/Rubik-VariableFont_wght.ttf")
+    Rubik: require("../assets/fonts/Rubik-VariableFont_wght.ttf"),
   });
 
   useEffect(() => {
-    const prepare = async () => {
-      if (loaded) {
-        SplashScreen.hideAsync();
-      }
-      await initLanguage()
-    };
-    prepare();
+    if (loaded) {
+      SplashScreen.hideAsync();
+    }
   }, [loaded]);
 
-  if (!loaded) {
-    return null;
-  }
+  if (!loaded) return null;
 
   return (
     <Provider store={store}>
-      <I18nextProvider i18n={i18n} >
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      </Stack>
+      <I18nextProvider i18n={i18n}>
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="(tabs)" />
+        </Stack>
       </I18nextProvider>
     </Provider>
   );

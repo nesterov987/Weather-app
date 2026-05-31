@@ -29,11 +29,13 @@ export const NextDayWeather = () => {
   }
   const [timezoneOffset, setTimezoneOffset] = useState(currentWeather[0].timezone);
   const [currentTime, setCurrentTime] = useState(moment.unix(currentWeather[0].dt).utcOffset(timezoneOffset / 60));
-  const [todayForecast, setTodayForecast] = useState(forecastWeather.list.filter(item => Number(currentTime.format('D')) === Number(moment.unix(item.dt).utcOffset(timezoneOffset / 60).format('D'))));
+  const [todayForecast, setTodayForecast] = useState(forecastWeather.list.filter(item =>
+    Number(currentTime.clone().add(1, 'day').format('D')) === Number(moment.unix(item.dt).utcOffset(timezoneOffset / 60).format('D'))));
+  console.log(todayForecast)
   return (
     <View style={style.rootContainer}>
       <View style={style.headerContainer}>
-        <Text style={style.headerDay}>{t('Today_Forecast')}</Text>
+        <Text style={style.headerDay}>{t('Tomorrow_Forecast')}</Text>
         <FontAwesome5 name="calendar-alt" size={24} color="white" />
       </View>
       <FlatList

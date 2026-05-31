@@ -13,10 +13,7 @@ const weatherSlice = createSlice({
   name: "weather",
   initialState,
   reducers: {
-    addCurrentWeather: (
-      state,
-      action: PayloadAction<{ weather: IWeather }>
-    ) => {
+    addCurrentWeather: (state, action) => {
       state.currentWeather=[action.payload.weather]
     },
     addForecastWeather: (

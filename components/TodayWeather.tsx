@@ -33,7 +33,7 @@ export const TodayWeather = () => {
   return (
     <View style={style.rootContainer}>
       <View style={style.headerContainer}>
-        <Text style={style.headerDay}>{t('Today')}</Text>
+        <Text style={style.headerDay}>{t('Today_Forecast')}</Text>
         <Text style={style.headerDate}> {t(`${date.format("MMMM")}`)} {date.format("D")}</Text>
       </View>
       <FlatList

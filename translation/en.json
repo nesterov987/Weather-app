@@ -1,6 +1,6 @@
 {
     "Enter_city":"Enter city",
-    "Find_city":"Find a city for the weather",
+    "Find_city":"Real-time weather forecast",
     "Show_weather":"Show weather",
     "Home":"Home",
     "Weather":"Weather",
@@ -21,6 +21,7 @@
     "Clear": "Clear",
     "Clouds": "Clouds",
     "Today_Forecast":"Today Forecast",
+    "Tomorrow_Forecast":"Tomorrow Forecast",
     "Today":"Today",
     "Min":"Min",
     "Max":"Max",
@@ -36,5 +37,7 @@
     "October": "October",
     "November": "November",
     "December": "December",
-    "You_must_enter":"You must enter city name"
+    "You_must_enter":"You must enter city name",
+    "Weather_App": "Weather App",
+    "Select_language": "Select language"
 }
